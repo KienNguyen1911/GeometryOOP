@@ -86,7 +86,7 @@ if (isset($_POST["calculateParallelogram"])) {
                     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Side</label>
-                            <input type="number" class="form-control" name="side" id="exampleInputEmail1"
+                            <input type="number" min="1" class="form-control" name="side" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" required>
                         </div>
                         <button type="submit" class="btn btn-primary" name="calculateSquare">Submit</button>
@@ -103,17 +103,17 @@ if (isset($_POST["calculateParallelogram"])) {
                     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">First Side</label>
-                            <input type="number" class="form-control" name="side1" id="exampleInputEmail1"
+                            <input type="number" min="1" class="form-control" name="side1" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Second of Side</label>
-                            <input type="number" class="form-control" name="side2" id="exampleInputEmail1"
+                            <input type="number" min="1" class="form-control" name="side2" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Third of Side</label>
-                            <input type="number" class="form-control" name="side3" id="exampleInputEmail1"
+                            <input type="number" min="1" class="form-control" name="side3" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" required>
                         </div>
                         <button type="submit" class="btn btn-primary" name="calculateTriangle">Submit</button>
@@ -129,12 +129,12 @@ if (isset($_POST["calculateParallelogram"])) {
                     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Width</label>
-                            <input type="number" class="form-control" name="width" id="exampleInputEmail1"
+                            <input type="number" min="1" class="form-control" name="width" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Height</label>
-                            <input type="number" class="form-control" name="height" id="exampleInputEmail1"
+                            <input type="number" min="1" class="form-control" name="height" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" required>
                         </div>
                         <button type="submit" class="btn btn-primary" name="calculateRectangle">Submit</button>
@@ -150,17 +150,17 @@ if (isset($_POST["calculateParallelogram"])) {
                     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Width</label>
-                            <input type="number" class="form-control" name="width" id="exampleInputEmail1"
+                            <input type="number" min="1" class="form-control" name="width" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Side</label>
-                            <input type="number" class="form-control" name="side" id="exampleInputEmail1"
+                            <input type="number" min="1" class="form-control" name="side" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Height</label>
-                            <input type="number" class="form-control" name="height" id="exampleInputEmail1"
+                            <input type="number" min="1" class="form-control" name="height" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" required>
                         </div>
                         <button type="submit" class="btn btn-primary" name="calculateParallelogram">Submit</button>
