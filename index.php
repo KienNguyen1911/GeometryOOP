@@ -1,9 +1,10 @@
 <?php
-require "./Model/Shape.php";
-require "./Model/Square.php";
-require "./Model/Rectangle.php";
-require "./Model/Triangle.php";
-require "./Model/Parallelogram.php";
+require_once "./Interface/ICalculate.php";	
+require_once "./Model/Shape.php";
+require_once "./Model/Square.php";
+require_once "./Model/Rectangle.php";
+require_once "./Model/Triangle.php";
+require_once "./Model/Parallelogram.php";
 
 $result = "";
 $area = 0;
@@ -18,12 +19,6 @@ if (isset($_POST["checkClass"])) {
             $result = "Not found";
         }
     }
-}
-if (isset($_POST["calculateSquare"])) {
-    $width = validate_input($_POST["width"]);
-    $shape = new Square($width);
-    $area = $shape->calculateArea($width);
-    $perimeter = $shape->calculatePerimeter($width);
 }
 // echo "<br>";
 // var_dump($name_class);

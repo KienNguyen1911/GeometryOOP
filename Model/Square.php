@@ -1,13 +1,14 @@
 <?php 
 // require("Shape.php");
-require "./Interface/ICalculate.php";
-
+// require_once "./Interface/ICalculate.php";
+// include_once("./Interface/ICalculate.php");
 class Square extends Shape implements ICalculate{
     public $side;
     // $name->setName("Square");
-    public function __construct($name)
+    public function __construct($name, $side)
     {
         parent::__construct($name);
+        $this->side = $side;
     }
     public function show()
     {
@@ -23,6 +24,5 @@ class Square extends Shape implements ICalculate{
     {
         return 4 * $this->side;
     }
-
 }
 ?>
