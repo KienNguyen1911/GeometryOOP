@@ -19,8 +19,15 @@ class Triangle extends Shape implements ICalculate{
         echo "I am a " . $this->getName();
     }
 
+    public function checkShape() {
+        if ($this->sideOne + $this->sideTwo <= $this->sideThree || $this->sideOne + $this->sideThree <= $this->sideTwo || $this->sideTwo + $this->sideThree <= $this->sideOne) {
+            return "Sum of 2 sides must be larger than the third side";
+        }
+    }
+
     public function calculateArea()
     {
+
         $p = ($this->sideOne + $this->sideTwo + $this->sideThree) / 2;
         return sqrt($p * ($p - $this->sideOne) * ($p - $this->sideTwo) * ($p - $this->sideThree));
     }

@@ -18,6 +18,11 @@ class Parallelogram extends Shape implements ICalculate{
     {
         echo "I am a " . $this->getName();
     }
+    public function checkShape() {
+        if ($this->height >=  $this->width || $this->height >= $this->side) {
+            return "Height must be less than width or side";
+        }
+    }
     public function calculateArea()
     {
         return $this->height * $this->width;

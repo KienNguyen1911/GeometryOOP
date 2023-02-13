@@ -15,6 +15,12 @@ class Square extends Shape implements ICalculate{
         echo "I am a " . $this->getName();
     }
 
+    public function checkShape() {
+        if ($this->side < 0) {
+            return "Side must be larger than 0";
+        }
+    }
+
     public function calculateArea()
     {
         return $this->side * $this->side;
