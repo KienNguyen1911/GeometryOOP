@@ -1,10 +1,10 @@
 <?php
 require_once "./Interface/ICalculate.php";
-require "./Model/Shape.php";
-require "./Model/Square.php";
-require "./Model/Rectangle.php";
-require "./Model/Triangle.php";
-require "./Model/Parallelogram.php";
+require "./Geometry/Shape.php";
+require "./Geometry/Square.php";
+require "./Geometry/Rectangle.php";
+require "./Geometry/Triangle.php";
+require "./Geometry/Parallelogram.php";
 
 
 $class = $_GET["class"];
