@@ -1,10 +1,10 @@
 <?php
 require_once "./Interface/ICalculate.php";
-require "./Geometry/Shape.php";
-require "./Geometry/Square.php";
-require "./Geometry/Rectangle.php";
-require "./Geometry/Triangle.php";
-require "./Geometry/Parallelogram.php";
+require "./Model/Shape.php";
+require "./Model/Square.php";
+require "./Model/Rectangle.php";
+require "./Model/Triangle.php";
+require "./Model/Parallelogram.php";
 
 
 $class = $_GET["class"];
@@ -12,44 +12,16 @@ $name_class = $class;
 $area = 0;
 $perimeter = 0;
 $error = "";
-// if (isset($_POST["calculateSquare"])) {
-//     $side = $_POST["side"];
-//     $square = new Square("Square", $side);
-//     $area = $square->calculateArea();
-//     $perimeter = $square->calculatePerimeter();
-// }
 
+if (isset($_POST["calculate"])) {
+    // convert $post to string
+    unset($_POST["calculate"]);
+    $_POST["name"] = $class;
+    $obj = new $class($_POST);
+    $area = $obj->calculateArea();
+    $perimeter = $obj->calculatePerimeter();
+}
 
-// if (isset($_POST["calculateTriangle"])) {
-//     $side1 = $_POST["side1"];
-//     $side2 = $_POST["side2"];
-//     $side3 = $_POST["side3"];
-//     $triangle = new Triangle("Triangle", $side1, $side2, $side3);
-//     $area = $triangle->calculateArea();
-//     $perimeter = $triangle->calculatePerimeter();
-// }
-
-// if (isset($_POST["calculateRectangle"])) {
-//     $height = $_POST["height"];
-//     $width = $_POST["width"];
-//     $rectangle = new Rectangle("Rectangle", $height, $width);
-//     $area = $rectangle->calculateArea();
-//     $perimeter = $rectangle->calculatePerimeter();
-// }
-
-// if (isset($_POST["calculateParallelogram"])) {
-//     $height = $_POST["height"];
-//     $width = $_POST["width"];
-//     $side = $_POST["side"];
-//     if ($width > $height || $side > $height) {
-//         $parallelogram = new Parallelogram("Parallelogram", $height, $width, $side);
-//         $area = $parallelogram->calculateArea();
-//         $perimeter = $parallelogram->calculatePerimeter();
-//     } else {
-//         $error = "Height must be less than width or side";
-//         // return;
-//     }
-// }
 ?>
 
 
@@ -90,7 +62,7 @@ $error = "";
                             <input type="number" min="1" class="form-control" name="side" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" required>
                         </div>
-                        <button type="submit" class="btn btn-primary" name="calculateSquare">Submit</button>
+                        <button type="submit" class="btn btn-primary" name="calculate">Submit</button>
                     </form>
                     <?php
 
@@ -104,20 +76,20 @@ $error = "";
                     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">First Side</label>
-                            <input type="number" min="1" class="form-control" name="side1" id="exampleInputEmail1"
+                            <input type="number" min="1" class="form-control" name="sideOne" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Second of Side</label>
-                            <input type="number" min="1" class="form-control" name="side2" id="exampleInputEmail1"
+                            <input type="number" min="1" class="form-control" name="sideTwo" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Third of Side</label>
-                            <input type="number" min="1" class="form-control" name="side3" id="exampleInputEmail1"
+                            <input type="number" min="1" class="form-control" name="sideThree" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" required>
                         </div>
-                        <button type="submit" class="btn btn-primary" name="calculateTriangle">Submit</button>
+                        <button type="submit" class="btn btn-primary" name="calculate">Submit</button>
                     </form>
                     <?php
                     echo "Area: " . $area;
@@ -138,7 +110,7 @@ $error = "";
                             <input type="number" min="1" class="form-control" name="height" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" required>
                         </div>
-                        <button type="submit" class="btn btn-primary" name="calculateRectangle">Submit</button>
+                        <button type="submit" class="btn btn-primary" name="calculate">Submit</button>
                     </form>
                     <?php
                     echo "Area: " . $area;
@@ -164,7 +136,7 @@ $error = "";
                             <input type="number" min="1" class="form-control" name="height" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" required>
                         </div>
-                        <button type="submit" class="btn btn-primary" name="calculateParallelogram">Submit</button>
+                        <button type="submit" class="btn btn-primary" name="calculate">Submit</button>
                     </form>
                     <?php
                     echo "Area: " . $area;

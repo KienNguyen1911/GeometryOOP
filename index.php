@@ -1,10 +1,10 @@
 <?php
 require_once "./Interface/ICalculate.php";	
-require_once "./Model/Shape.php";
-require_once "./Model/Square.php";
-require_once "./Model/Rectangle.php";
-require_once "./Model/Triangle.php";
-require_once "./Model/Parallelogram.php";
+require_once "./Geometry/Shape.php";
+require_once "./Geometry/Square.php";
+require_once "./Geometry/Rectangle.php";
+require_once "./Geometry/Triangle.php";
+require_once "./Geometry/Parallelogram.php";
 
 $result = "";
 $area = 0;
@@ -69,7 +69,7 @@ function validate_input($data)
                     echo $result;
                     echo '<br>';
                     if (class_exists($name_class)) {
-                        echo '<a class="btn btn-info" href="./calculate.php?class=' . $name_class . '">Calculate </a>';
+                        echo '<a class="btn btn-info" href="./calculate2.php?class=' . $name_class . '">Calculate </a>';
                     }
                     ?>
                 </h1>

@@ -6,12 +6,12 @@ class Parallelogram extends Shape implements ICalculate{
     public $side;
 
     // $name->setName("Square");
-    public function __construct($name, $height, $width, $side)
+    public function __construct($array = [])
     {
-        parent::__construct($name);
-        $this->height = $height;
-        $this->width = $width;
-        $this->side = $side;
+        parent::__construct($array["name"]);
+        $this->height = $array["height"];
+        $this->width = $array["width"];
+        $this->side = $array["side"];
     }
     
     public function show()

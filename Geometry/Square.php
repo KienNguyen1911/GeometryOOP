@@ -5,10 +5,10 @@
 class Square extends Shape implements ICalculate{
     public $side;
     // $name->setName("Square");
-    public function __construct($name, $side)
+    public function __construct($array = [])
     {
-        parent::__construct($name);
-        $this->side = $side;
+        parent::__construct($array["name"]);
+        $this->side = $array["side"];
     }
     public function show()
     {
